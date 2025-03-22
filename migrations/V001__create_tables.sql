@@ -1,3 +1,5 @@
+-- Создание структуры
+
 CREATE TABLE public.order_product (
     quantity integer NOT NULL,
     order_id bigint NOT NULL,
