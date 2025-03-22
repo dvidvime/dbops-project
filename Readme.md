@@ -3,7 +3,10 @@
 
 ## Структура
 - migrations
-  - V001__create_tables.sql 
+  - V001__create_tables.sql - создание таблиц
+  - V002__change_schema.sql - нормализация
+  - V003__insert_data.sql - вставка данных
+  - V004__create_index.sql - создание индексов
 
 ## Подготовка базы данных
 
@@ -12,7 +15,7 @@ CREATE DATABASE store; -- создаем новую базу данных
 
 \c store -- переключаемся на нее
 
-CREATE ROLE postgresql LOGIN PASSWORD 'postgresql'; -- создаем нового пользователя
+CREATE ROLE postgresql LOGIN PASSWORD 'здесь пароль'; -- создаем нового пользователя
 
 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO postgresql; -- даем ему права на все таблицы в базе store
 
@@ -38,3 +41,5 @@ group by o.date_created;
 ```
 
 Время выполнения без индекса 39372.534 ms (00:39.373)
+
+Время выполнения с индексом
